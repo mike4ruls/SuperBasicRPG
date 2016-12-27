@@ -1,0 +1,15 @@
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\bin\Debug\RPG.exe.config
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\bin\Debug\RPG.exe
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\bin\Debug\RPG.pdb
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\obj\Debug\RPG.exe
+\\banner.main.ad.rit.edu\students\mvr9788\igmprofile\documents\visual studio 2013\Projects\RPG\RPG\obj\Debug\RPG.pdb
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\RPG\RPG\bin\Debug\RPG.exe.config
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\RPG\RPG\obj\Debug\RPG.exe
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\RPG\RPG\obj\Debug\RPG.pdb
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\bin\Debug\RPG.exe.config
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\obj\Debug\RPG.exe
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\obj\Debug\RPG.pdb
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\bin\Debug\RPG.exe
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\bin\Debug\RPG.pdb
+\\banner.main.ad.rit.edu\students\mvr9788\IGMProfile\Desktop\Year 1\Semester 1\Visual Studio Projects\RPG(Homework)\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
