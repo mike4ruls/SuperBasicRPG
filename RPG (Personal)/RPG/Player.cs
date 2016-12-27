@@ -1,7 +1,4 @@
-﻿//Name: Michael Ray
-//Player Class
-//Should be a parent class and construct generic player attributes with a bag/inventory
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +15,9 @@ namespace RPG
         private int attack;
         private int armor;
         private int maxSkills;
-        private Bag inventory; //Declaring a bag object
-        private Skills genSkill; // Declaring a General Skill every player will have
-        private Skills[] skill; // Declaring an array of skills objects to hold
+        Bag inventory;
+        Skills genSkill;
+        Skills[] skill;
 
         public Player()
         {
@@ -43,33 +40,22 @@ namespace RPG
             armor = armr;
             maxSkills = 3;
             inventory = new Bag(name);
-            genSkill = new Heal(100); // General skill is Heal
+            genSkill = new Heal(100);
             skill = new Skills[maxSkills];
-
-
             skill[0] = genSkill;
             skill[1] = new Skills();
             skill[2] = new Skills();
 
         }
 
-        /// <summary>
-        /// Should open up and display player's inventory
-        /// </summary>
         public void OpenBag()
         {
             inventory.OpenBag();
         }
 
-        /// <summary>
-        /// Should add a skill object into player's skill array
-        /// </summary>
-        /// <param name="newSkill">A skill object</param>
-
         public void AddSkill(Skills newSkill)
         {
             Skills nothing = new Skills();
-            // Looks for an open slot in the array
             for (int i = 0; i < skill.Length; i++)
             {
                 if (skill[i].ToString() == nothing.ToString())
@@ -80,13 +66,9 @@ namespace RPG
             }
         }
 
-        /// <summary>
-        /// Displays the player's skills
-        /// </summary>
-
         public void ShowSkills()
         {
-            int end = 0; // So I can leave loop
+            int end = 0;
             do
             {
                 int slots = 1;
@@ -96,9 +78,21 @@ namespace RPG
                     Console.WriteLine(slots + ") " + skill[i].ToString());
                     slots += 1;
                 }
-                end += 1;
+                Console.WriteLine("Press B to go back...");
+                string choice = Console.ReadLine();
+                choice = choice.ToUpper();
+                if (choice != "B")
+                {
+                    Console.Clear();
+                    continue;
+                }
+                else if (choice == "B")
+                {
+                    end += 1;
+                }
 
             } while (end == 0);
+            Console.Clear();
 
         }
 

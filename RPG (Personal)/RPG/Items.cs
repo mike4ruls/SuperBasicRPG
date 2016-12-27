@@ -1,7 +1,4 @@
-﻿//Name: Michael Ray
-//Items Class
-//A parent class, and should construct a basic item object
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +8,8 @@ namespace RPG
 {
     class Items
     {
-        private string name;
+        string name;
 
-
-        // Constructor for a blank Item
         public Items()
         {
             name = "nothing";

@@ -1,19 +1,13 @@
-﻿//Name: Michael Ray
-//Heal Class
-//A sub class of Skills class, This skill should be a generic skill every player carries
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace RPG
 {
-
-    // Sub Class of Skills
     class Heal:Skills
     {
-        // This skill can heal the player for a certain ammount of HP
-        private int ammountHeal;
+        int ammountHeal;
         public Heal()
         {
 

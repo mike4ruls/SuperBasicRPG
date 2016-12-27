@@ -1,9 +1,4 @@
-﻿//Name: Michael Ray
-//Bag Class
-//The Bag class has multiple methods, one to do the main functions in the bag
-//then another for displaying the content in the bag, one to add items to the bag
-//and one to remove items from the bag.  
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +11,7 @@ namespace RPG
         private string name;
         private int slots;
         private int space;
-        private Items[] item; // Data structure to hold item objects
+        Items[] item;
 
         public Bag()
         {
@@ -29,27 +24,24 @@ namespace RPG
             space = 0;
             item = new Items[slots];
 
-
-            // Inserts a blank item object into the items array
             for (int i = 0; i < item.Length; i++)
             {
                 item[i] = new Items();
             }
         }
 
-        /// <summary>
-        /// Should atleast print out the content of inventory ask what items you would
-        /// like to add or remove and leave the bag;
-        /// </summary>
-
         public void OpenBag()
         {
-            int num; // four the choice you want to make
+            Console.Clear();
+            int num;
             ListItems();
 
-            //Loop to keep you in the bag
+
             do{
-            string numStr = "1"; //Initially had user input, didn't feel like taking this out
+            Console.Write("\nWhat would you like to do?");
+            Console.WriteLine(" (Type in the number of the action that you want to do)");
+            Console.WriteLine("1) Add an Item\n2)Remove an item\n3)Close bag");
+            string numStr = Console.ReadLine();
             Boolean parsed = int.TryParse(numStr, out num);
 
             if(parsed == false)
@@ -65,46 +57,44 @@ namespace RPG
 
             else
             {
-                Random rgen = new Random();
-                num = 1; // Makes sure it always adds items to the until it is full
-
-                // So I can exit as soon as the bag is full
-                if (space == 10)
-                {
-                    num = 3;
-                }
                 switch (num)
                 {
-                        //To add items
                     case 1:
                         {
-                            int choice = rgen.Next(1,4); // Randommizes the items input into the bag
-
+                            Console.WriteLine("What would you like to add to your bag? (Type in the number of the item to want)");
+                            Console.WriteLine("1)Health Potion\n2)Mana Potion\n3)Wooden bow");
+                            string choiceStr = Console.ReadLine();
+                            int choice;
+                            Boolean parsed1 = int.TryParse(choiceStr, out choice);
+                            if (parsed == false)
+                            {
+                                Console.WriteLine("Come on take this seriously bro...");
+                                continue;
+                            }
 
                             if (choice < 1 || choice > 3)
                             {
                                 Console.WriteLine("That isn't an option");
                             }
-                            
                             else
                             {
                                 switch (choice)
                                 {
                                     case 1:
                                         Console.Clear();
-                                        Items hPotion = new HealthPotion(50);
+                                        Items hPotion = new HealthPotion();
                                         AddItem(hPotion);
                                         break;
 
                                     case 2:
                                         Console.Clear();
-                                        Items mPotion = new ManaPotion(50);
+                                        Items mPotion = new ManaPotion();
                                         AddItem(mPotion);
                                         break;
 
                                     case 3:
                                         Console.Clear();
-                                        Items bow = new Bow(1);
+                                        Items bow = new Bow();
                                         AddItem(bow);
                                         break;
                                 }
@@ -113,8 +103,6 @@ namespace RPG
 
                             break;
                         }
-
-                        //To remove items
                     case 2:
                         {
                             Console.WriteLine("Which item would you like to remove? (Type in the number of the item you'd like to remove)");
@@ -133,17 +121,15 @@ namespace RPG
                             }
                             else
                             {
-                                RemoveItem(choice);
                                 Console.Clear();
+                                RemoveItem(choice);
                                 ListItems();
                             }
                             break;
                         }
-
-                        // To leave bag
                     case 3:
                         {
-                           
+                            Console.Clear();
                             break;
                         }
                 }
@@ -156,10 +142,6 @@ namespace RPG
 
         }
 
-
-        /// <summary>
-        /// Should list out the content of the bag
-        /// </summary>
         public void ListItems()
         {
 
@@ -173,11 +155,6 @@ namespace RPG
             }
         }
 
-
-        /// <summary>
-        /// Should add an item object to the item array
-        /// </summary>
-        /// <param name="newitem">an item object</param>
         public void AddItem(Items newitem)
         {
             Items nothing = new Items();
@@ -185,7 +162,6 @@ namespace RPG
             if (space == 10)
             {
                 Console.WriteLine("( Your bag is full!! )\n");
-                
             }
             else if (space <= item.Length)
             {
@@ -205,16 +181,20 @@ namespace RPG
 
         }
 
-        /// <summary>
-        /// Should find specific item and remove it
-        /// </summary>
-        /// <param name="num">Number of slot</param>
         public void RemoveItem(int num)
         {
             if (num > item.Length || num < 0)
             {
                 Console.WriteLine("That's not even a slot bro, git gud kid");
 
+            }
+            else if (space == 0)
+            {
+                Console.WriteLine("( There is nothing in the bag )");
+            }
+            else if (item[num].ToString() == "nothing")
+            {
+                Console.WriteLine("( There wasn't anything there to remove... )");
             }
             else
             {

@@ -1,7 +1,4 @@
-﻿//Name: Michael Ray
-//Invisible Class
-//A sub class of Skills class, This skill should specifically for only Theif players
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-
-    // Sub Class of Skills
     class Invisible:Skills
     {
-        // Can be active for a certain ammount of time
-        private int active;
+        int active;
         public Invisible()
         {
 
